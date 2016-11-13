@@ -1,3 +1,4 @@
+var cool = require('cool-ascii-faces');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -5,6 +6,10 @@ var bodyParser = require('body-parser');
 // routing modules
 var cats = require('./routes/cats');
 var index = require('./routes/index');
+
+app.get('/cool', function(req, res) {
+  res.send(cool());
+});
 
 // use body parser on EVERY request
 app.use(bodyParser.urlencoded({ extended: true }));

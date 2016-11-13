@@ -9,6 +9,7 @@ var cats = [
   }
 ];
 
+
 router.get('/', function(req, res) {
   console.log('get cats');
   res.send(cats);
